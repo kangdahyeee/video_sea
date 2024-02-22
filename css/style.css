@@ -1,0 +1,332 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Alegreya+Sans+SC:wght@100&display=swap");
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+ul,
+li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+a {text-decoration: none;}
+/* main */
+main {
+    display: flex; /* header section 좌우구조 */
+    width: 100%;
+    height: 100vh;
+    background-color: #333;
+}
+main header {
+    width: 20%;
+    height: 100%;
+    padding: 10vh 5vw;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: space-between;
+    /* 세로측 양끝에 컨텐츠 배치*/
+    justify-content: center;
+    position: relative;
+    z-index: 999;
+}
+main header h1 {
+    font-size: 0px;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+main header h1 i {
+    font-size: 5vw;
+    margin-bottom: 15px;    
+}
+main header h1 span {
+    font: normal 0.8vw/1 "arial";
+}
+main header address {
+    font: normal 11px/1.2 "arial";
+    color: #888;
+    position: absolute;  /* 추가 */
+    bottom: 10vh; /* 추가 */
+    text-align: center;
+}
+/* nav */
+main nav {
+    position: absolute;
+    top: 10vh;
+    right: 5vw;
+    z-index: 3;
+} 
+main nav ul {
+    display: flex;
+}
+main nav ul li a {
+    font-size: 18px;
+    color: #bbb;
+    margin-right: 30px;
+}
+/* 검색박스 */
+.search-container {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 30px;
+    /* 패딩을 더 크게 조정하여 검색창 크기 조절 */
+    border-radius: 10px;
+    /* 둥근 테두리 반경 설정 */
+    z-index: 99999999;
+}
+.search-container>div {
+    position: relative;
+}
+.search-container>div i {
+    position: absolute;
+    right: 10px;
+    top: 20px;
+    font-size: 20px;
+    color: rgba(255, 255, 255, 0.3);
+    cursor: pointer;
+}
+.search-container input[type="text"] {
+    width: 400px;
+    /* 넓이를 크게 조정 */
+    padding: 15px 0px 15px 15px;
+    border: none;
+    background-color: transparent;
+    color: white;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.5);   
+    /* margin-right: 20px;    */
+    font-size: 18px;   
+    outline: none;
+}
+
+/* section */
+main section {
+    width: 80%;
+    height: 100%;
+    padding-top: 15vh;
+    display: flex;
+    position: relative;
+    z-index: 1; 
+    padding-right: 5vw;  
+}
+/* section 안에 arcticle 들어간 구조가 맞음 */
+main section article {
+    flex: 1; /* 모든 영상 너비 동등하게 적응 */
+    padding: 70px 40px 100px;
+    position: relative;
+    opacity: 0.6;
+    z-index: 1;
+    cursor: pointer;
+    transition: opacity 1s, flex 1s;
+    /* flex 속성 변경되었을때 걸리는 시간 1초 */
+}
+main section article::before {
+    content: "";
+    width: 80%;
+    height: 95%;
+    position: absolute;
+    background-color: #444;
+    top: 0;
+    left: -200px;
+    opacity: 0;
+    transition: 1s;
+}
+main section article:hover {
+    flex: 1.5; /* 마우스 올렸을때 1.5 증가 */
+    opacity: 1;
+    z-index: 2;
+}
+main section article:hover::before {
+    left: 0;
+    opacity: 1;
+    z-index: -1;
+}
+main section article .inner {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: space-between;
+    position: relative;
+}
+main section article .inner .txt {
+    width: 100%;
+    transition: 0.5s;
+}
+main section article:hover .inner .txt {
+    width: 70%;
+}
+main section article .inner .txt h2 {
+    font: normal 2vw/1 "Alegreya Sans SC";
+    color: #fff;
+    margin-bottom: 40px;
+    padding-top: 70px;
+    transition: 1s;
+}
+main section article:hover .inner .txt h2 {
+    font-size: 5vw;
+    padding-top: 0;
+}
+main section article .inner .txt h2::after {
+    content: "";
+    width: 40px;
+    height: 2px;
+    background-color: #777;
+    margin-top: 20px;
+}
+main section article .inner .txt p {
+    font: 14px/1.4 "arial";
+    color: #999;
+}
+/* 영상 */
+main section article .inner figure {
+    width: 100%;
+    height: 15vh;
+    background-color: #777;
+    overflow: hidden;
+    box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.3);
+    filter: saturate(10%); /* 영상박스채도 10% 흑백 */
+    transform-origin: left center; /* left - 기준점, center - 수직중앙 */
+    transition: 1s;
+}
+main section article:hover .inner figure {
+    filter: saturate(120%);
+    height: 25vh;
+    transform: translateY(3vh);
+}
+main section article .inner figure video {
+    width: 100%; 
+    height: 100%;
+    object-fit: cover; /* figure 박스안에 꽉차게 설정 */
+    transform: scale(1.1);
+}
+main aside {
+    width: 100%;
+    height: 100vh;
+    background-color: #222;
+    position: absolute;
+    top: 0;
+    left: -100%; /* 왼쪽바깥 */
+    opacity: 0;
+    z-index:2; /* section 덮어야함 */
+    padding: 20vh 7vw 4vh 20vw;
+    display: flex; /* text, figure 좌우정렬*/
+    justify-content: space-between;
+    transition: 1s;
+}
+main aside.on {
+    opacity: 1;
+    left: 0%;
+}
+main aside .txt {
+    width: 25%;
+    height: 100%;
+}
+main aside .txt h3 {
+    font: normal 6vw/1 "Alegreya Sans SC";
+    color: #ddd;
+    margin-bottom: 20px;
+}
+main aside .txt p {
+    font: 1.1vw/1.3 "arial";
+    color: #666;
+    margin-bottom: 60px;
+}
+/* 닫기버튼 */
+main aside .txt span {
+    color: orange;
+    cursor: pointer;
+}
+main aside figure {
+    width: 72%; 
+    height: 100%;   
+}
+main aside figure video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+@media(max-width:760px) {
+    body {
+        background-color: #333;   
+    }
+    main {
+        flex-direction: column;
+    }
+    main header,
+    main section {
+        width: 100%;
+    }
+    main header {
+        padding: 5vh 5vw;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+    main header h1 i {
+        font-size: 10vh;
+        margin-bottom: 10px;
+    }
+    main header h1 span {
+        font-size: 3vw;
+    }
+    main header address {
+        position: absolute;
+        bottom:-100px;
+    }
+    main nav {
+        position: static; /* 포지션 속성 해제 */
+        margin-top: 10px;
+        display: flex;
+        justify-content: center;
+    }
+    main nav ul {
+        gap: 20px;
+    }
+    main nav ul li a {
+        font-size: 14px;
+        margin-right: 0; 
+    }
+    main section {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 10vh;
+        padding-left: 5vw;
+    }
+    main section article {
+        width: 90%;
+        margin-bottom: 20px;
+    }
+    main section article .inner .txt h2 {
+        font-size: 3.5vw;
+        margin-bottom: 30px;
+    }
+    main section article .inner .txt p {
+        font-size: 12px;
+        margin-bottom: 10px;
+    }
+    main section article .inner figure {
+        height: 30vh;
+    }
+    main section article .inner figure video {
+        transform: scale(1);
+    }
+    main aside {
+        display: none;
+    }
+    
+}
+
+
+
+
+

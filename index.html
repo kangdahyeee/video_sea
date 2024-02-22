@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> 강다혜 - 영상소개(Responsive) </title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">  
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.5.0/css/all.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <!-- (검색영역)jquery cdn -->
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script defer src="./js/main.js"></script>
+    <script defer src="./js/ie.js"></script>
+</head>
+<body>
+    <main>
+        <!-- header -->
+        <header>
+            <h1>
+                <i class="fab fa-firstdraft"></i><br>
+                <span>KANGDAHYE</span>
+            </h1>
+            <address>
+                <p>
+                    &copy; 2024 DAHYE <br>
+                    ALL right reserved.
+                </p>
+            </address>
+        </header>
+        <nav>
+            <ul>
+                <li><a href="mailto:dahye@dahye.com"><i class="fas fa-envelope"></i></a></li>
+                <li><a href="#"><i class="fas fa-search" id="searchButton"></i></a></li>
+            </ul>
+        </nav>
+        <!-- 검색창 -->
+        <div id="searchContainer" class="search-container">
+            <div>
+                <input type="text" placeholder="검색어를 입력하세요">
+                <!-- <button type="button">검색</button> -->
+                <i class="fa-regular fa-magnifying-glass"></i>
+            </div>
+        </div>
+        <!-- video 4ea -->
+        <section>
+            <!-- 1 -->
+            <article>
+                <div class="inner">
+                    <!-- 텍스트 -->
+                    <div class="txt">
+                        <h2>01</h2>
+                        <p>The cold East Sea, The waves are fierce. </p>
+                    </div>
+                    <!-- 영상 -->
+                    <figure>
+                        <!-- muted 음소거 / loop 반복 -->
+                        <video src="./vids/vid1.mp4" muted loop></video>
+                    </figure>
+                </div>
+            </article>
+            <!-- 2 -->
+            <article>
+                <div class="inner">
+                    <!-- 텍스트 -->
+                    <div class="txt">
+                        <h2>02</h2>
+                        <p>Upon the blue sea, White waves dance.  </p>
+                    </div>
+                    <!-- 영상 -->
+                    <figure>
+                        <!-- muted 음소거 / loop 반복 -->
+                        <video src="./vids/vid2.mp4" muted loop></video>
+                    </figure>
+            </div>
+            </article>
+            <!-- 3 -->
+            <article>
+                <div class="inner">
+                    <!-- 텍스트 -->
+                    <div class="txt">
+                        <h2>03</h2>
+                        <p>On the tranquil West Sea, <br>
+                            Beauty whispers with each wave.</p>
+                    </div>
+                    <!-- 영상 -->
+                    <figure>
+                        <!-- muted 음소거 / loop 반복 -->
+                        <video src="./vids/vid3.mp4" muted loop></video>
+                    </figure>
+            </div>
+            </article>
+            <!-- 4 -->
+            <article>
+                <div class="inner">
+                    <!-- 텍스트 -->
+                    <div class="txt">
+                        <h2>04</h2>
+                        <p>On Busan's sea, <br>
+                        Beauty's embrace, wild and free.</p>
+                    </div>
+                    <!-- 영상 -->
+                    <figure>
+                        <!-- muted 음소거 / loop 반복 -->
+                        <video src="./vids/vid4.mp4" muted loop></video>
+                    </figure>
+            </article>
+        </div>
+        </section>
+        <!-- 클릭시 왼쪽 영상 -->
+        <aside>
+            <!-- 텍스트 -->
+            <div class="txt">
+                <h3>01</h3>
+                <p>The cold East Sea, The waves are fierce. </p>
+                <span>CLOSE</span>
+            </div>
+            <!-- 영상 -->
+            <figure>
+                <!-- muted 음소거 / loop 반복 -->
+                <video src="./vids/vid1.mp4" muted loop></video>
+            </figure>
+        </aside>
+    </main>
+</body>
+</html>
